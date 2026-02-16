@@ -1,4 +1,96 @@
-/* déjà fourni ci-dessus + */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0b0f1a;
+  color: white;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  padding: 60px;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 40px;
+}
+
+.big {
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.medium {
+  font-size: 42px;
+}
+
+/* Lower third */
+.lower-third {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 28px;
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Ticker */
+.ticker {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  background: #c40000;
+  padding: 10px 0;
+  font-size: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ticker span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 25s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* News */
+.main-article {
+  margin-bottom: 40px;
+}
+
+.side-articles {
+  margin-top: 20px;
+}
+
+.side-item {
+  margin-bottom: 10px;
+}
+
 
 .main-article img {
   width: 100%;
