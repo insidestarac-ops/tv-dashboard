@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background: #0b0f1a;
+  background: #0B0F1A;
   color: white;
   overflow: hidden;
 }
@@ -15,82 +15,77 @@ iframe {
   width: 100vw;
   height: 100vh;
   border: none;
+  transition: opacity .5s ease;
 }
 
-.scene {
-  width: 100vw;
-  height: 100vh;
-  padding: 60px;
+.fade { opacity: 0; }
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,.1);
+  z-index: 9999;
 }
 
-.title {
-  font-size: 64px;
-  margin-bottom: 40px;
-}
-
-.big {
-  font-size: 120px;
-  font-weight: bold;
-}
-
-.medium {
-  font-size: 42px;
+#progress {
+  height: 100%;
+  width: 0%;
+  background: #00D4FF;
 }
 
 /* Lower third */
 .lower-third {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   width: 100%;
-  height: 60px;
-  background: rgba(0,0,0,0.7);
+  background: linear-gradient(to top, rgba(10,15,30,.95), transparent);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  align-items: center;
+  padding: 20px 60px;
   font-size: 28px;
 }
 
-.logo {
-  height: 40px;
-}
+.logo { height: 50px; }
+.bfm-logo { height: 40px; margin-left: 20px; }
 
 /* Ticker */
 .ticker {
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
   width: 100%;
-  background: #c40000;
-  padding: 10px 0;
-  font-size: 32px;
-  white-space: nowrap;
+  height: 60px;
+  background: #E10600;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
-.ticker span {
-  display: inline-block;
+#ticker-text {
+  white-space: nowrap;
   padding-left: 100%;
-  animation: scroll 25s linear infinite;
+  animation: ticker 40s linear infinite;
+  font-size: 28px;
 }
 
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-/* News */
+/* NEWS GRID */
+.news-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+}
+
 .main-article {
-  margin-bottom: 40px;
+  position: relative;
 }
-
-.side-articles {
-  margin-top: 20px;
-}
-
-.side-item {
-  margin-bottom: 10px;
-}
-
 
 .main-article img {
   width: 100%;
@@ -98,11 +93,68 @@ iframe {
   object-fit: cover;
 }
 
-.weather-card {
-  width: 200px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
+.overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+  padding: 40px;
+  max-width: 60%;
+}
+
+.overlay h1 { font-size: 64px; }
+.overlay p { font-size: 28px; }
+
+/* Side articles */
+.side-articles {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
   padding: 20px;
-  margin: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.side-item {
+  background: rgba(0,0,0,.5);
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+/* METEO */
+.meteo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.weather-card {
+  text-align: center;
+  background: rgba(0,0,0,.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.weather-card h2 { font-size: 50px; }
+.weather-card p { font-size: 26px; }
+
+/* CALENDAR */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  padding: 80px;
+}
+
+.day {
+  padding: 30px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 10px;
+  background: rgba(0,0,0,.3);
+}
+
+.today {
+  border: 3px solid #00D4FF;
+  background: rgba(0,212,255,.2);
 }
