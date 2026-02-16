@@ -32,7 +32,6 @@ function startProgress() {
   }, 100);
 }
 
-// Switch clavier (Stream Deck)
 document.addEventListener("keydown", (e) => {
   if (e.key === "1") loadScene(0);
   if (e.key === "2") loadScene(1);
