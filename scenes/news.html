@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="scene">
+<body>
 
-  <div class="main-article">
-    <div id="news-title" class="title"></div>
-    <div id="news-desc" class="medium" style="margin-top:20px;"></div>
-  </div>
+<div class="news-grid">
+  <div id="main-article" class="main-article"></div>
+  <div id="side-articles" class="side-articles"></div>
+</div>
 
-  <div class="side-articles" id="side-articles"></div>
+<div class="lower-third">
+  <img src="../assets/logo.png" class="logo">
+  <span>AUVERGNE RHÔNE-ALPES / BFM</span>
+  <img src="../assets/bfm.png" class="bfm-logo">
+  <span id="clock"></span>
+</div>
 
-  <div class="lower-third">
-    <img src="../assets/logo.png" class="logo">
-    <span>TF1 INFO</span>
-    <span id="clock"></span>
-  </div>
+<div class="ticker">
+  <div id="ticker-text"></div>
+</div>
 
-  <div class="ticker">
-    <span id="ticker-text"></span>
-  </div>
-
-  <script src="../js/news.js"></script>
+<script src="../js/news.js"></script>
 </body>
 </html>
